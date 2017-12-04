@@ -2,7 +2,19 @@
     <app-page-header [heading]="'Settings'" [icon]="'fa-th-list'"></app-page-header>
     <div class="row">
         <div class="col-xl-3 col-lg-6">
-            <app-module-panel [bgClass]="'primary'" [icon]="'fa-comments'" [name]="'Finance'"></app-module-panel>
+            <app-module-panel 
+                [bgClass]="'primary'" 
+                [icon]="'fa-comments'" 
+                [name]="'Finance'" 
+                [details]="'Family finance module'">
+            </app-module-panel>
+        </div>        
+    </div>
+    <div class="row">        
+        <div class="col-xl-12">
+            <hr/>
+            <button type="button" class="btn btn-primary float-right mx-1">Guardar</button>
+            <button type="button" class="btn btn-secondary float-right mx-1">Cancelar</button>
         </div>        
     </div>
 </div>
