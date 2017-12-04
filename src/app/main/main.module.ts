@@ -13,6 +13,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { ActiveModulesGuard } from './guards/active-modules.guard';
+import { ModulePanelComponent } from './components/module-panel/module-panel.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { ActiveModulesGuard } from './guards/active-modules.guard';
     SettingsComponent,
     ProfileComponent,
     PageHeaderComponent,
+    ModulePanelComponent,
   ],
   providers: [
     ActiveModulesGuard
