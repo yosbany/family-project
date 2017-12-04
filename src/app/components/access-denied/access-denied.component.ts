@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { routerTransition } from '../../router.animations';
-import { InterpreterService } from '../../services/interpreter.service';
+import { ComponentTransition, InterpreterService, UsersService } from '../../util-import';
+
 
 @Component({
   selector: 'app-access-denied',
   templateUrl: './access-denied.component.html',
   styleUrls: ['./access-denied.component.scss'],
-  animations: [routerTransition()]
+  animations: [ComponentTransition()]
 })
 export class AccessDeniedComponent implements OnInit {
 

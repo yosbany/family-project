@@ -13,7 +13,7 @@ import { AuthenticatedGuard } from './guards/authenticated.guard';
 const routes: Routes = [
     {
         path: '',
-        loadChildren: './main/main.module#MainModule',
+        loadChildren: './modules/main/main.module#MainModule',
         canActivate: [AuthenticatedGuard]
     },
     { path: 'login', component: LoginComponent },

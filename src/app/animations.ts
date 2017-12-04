@@ -1,11 +1,11 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-export function routerTransition() {
+export function ComponentTransition() {
     return slideToTop();
 }
 
 export function slideToRight() {
-    return trigger('routerTransition', [
+    return trigger('ComponentTransition', [
         state('void', style({})),
         state('*', style({})),
         transition(':enter', [
@@ -20,7 +20,7 @@ export function slideToRight() {
 }
 
 export function slideToLeft() {
-    return trigger('routerTransition', [
+    return trigger('ComponentTransition', [
         state('void', style({})),
         state('*', style({})),
         transition(':enter', [
@@ -35,7 +35,7 @@ export function slideToLeft() {
 }
 
 export function slideToBottom() {
-    return trigger('routerTransition', [
+    return trigger('ComponentTransition', [
         state('void', style({})),
         state('*', style({})),
         transition(':enter', [
@@ -50,7 +50,7 @@ export function slideToBottom() {
 }
 
 export function slideToTop() {
-    return trigger('routerTransition', [
+    return trigger('ComponentTransition', [
         state('void', style({})),
         state('*', style({})),
         transition(':enter', [

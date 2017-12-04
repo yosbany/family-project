@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../router.animations';
-import { InterpreterService } from '../../../services/interpreter.service';
+import { ComponentTransition, InterpreterService } from '../../../../util-import';
 
 @Component({
   selector: 'app-control-panel',
   templateUrl: './control-panel.component.html',
   styleUrls: ['./control-panel.component.scss'],
-  animations: [routerTransition()]
+  animations: [ComponentTransition()]
 })
 export class ControlPanelComponent implements OnInit {
 

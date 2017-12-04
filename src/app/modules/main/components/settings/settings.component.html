@@ -1,7 +1,7 @@
-<div [@routerTransition]>
+<div [@ComponentTransition]>
     <app-page-header [heading]="'Settings'" [icon]="'fa-th-list'"></app-page-header>
     <div class="row">
-        <div class="col-xl-3 col-lg-6">
+        <div *ngFor="let module of modules" class="col-xl-3 col-lg-6">
             <app-module-panel 
                 [bgClass]="'primary'" 
                 [icon]="'fa-comments'" 

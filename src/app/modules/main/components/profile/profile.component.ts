@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../../router.animations';
-import { InterpreterService } from '../../../services/interpreter.service';
+import { ComponentTransition, InterpreterService, UsersService } from '../../../../util-import';
+
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
-  animations: [routerTransition()]
+  animations: [ComponentTransition()]
 })
 export class ProfileComponent implements OnInit {
 
