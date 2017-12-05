@@ -10,8 +10,11 @@
       </div>
     </div>
     <div class="row check-module">
-      <div class="col-xs-12">
-        <input type="checkbox"  value="">
+      <div *ngIf="locked" class="col-xs-12">
+        <input type="checkbox" disabled  value="">
+      </div>
+      <div *ngIf="!locked" class="col-xs-12">
+        <input type="checkbox" value="">
       </div>
     </div>
   </div>

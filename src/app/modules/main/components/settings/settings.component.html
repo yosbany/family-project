@@ -1,12 +1,13 @@
 <div [@ComponentTransition]>
     <app-page-header [heading]="'Settings'" [icon]="'fa-th-list'"></app-page-header>
     <div class="row">
-        <div *ngFor="let module of modules" class="col-xl-3 col-lg-6">
+        <div *ngFor="let module of staticInformation.modules" class="col-xl-3 col-lg-6">
             <app-module-panel 
-                [bgClass]="'primary'" 
-                [icon]="'fa-comments'" 
-                [name]="'Finance'" 
-                [details]="'Family finance module'">
+                [bgClass]="module.bgClass" 
+                [icon]="module.icon" 
+                [name]="module.name" 
+                [details]="module.details"
+                [locked]="module.locked">
             </app-module-panel>
         </div>        
     </div>

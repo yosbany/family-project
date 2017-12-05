@@ -8,6 +8,7 @@ import { ComponentTransition, InterpreterService, UsersService, StaticInformatio
   animations: [ComponentTransition()],
   providers: [StaticInformationService]
 })
+
 export class SettingsComponent implements OnInit {
 
   constructor(private staticInformation: StaticInformationService) { }

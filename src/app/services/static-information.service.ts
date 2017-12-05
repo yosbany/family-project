@@ -4,13 +4,13 @@ import { Http } from '@angular/http';
 @Injectable()
 export class StaticInformationService {
 
-  public modules: any[] = [];
+  modules: any[] = [];
 
   constructor(public http: Http) {
     this.http.get('assets/data/modules.json').
       subscribe(data => {
         this.modules = data.json();
-      });
+    });
   }
 
 }

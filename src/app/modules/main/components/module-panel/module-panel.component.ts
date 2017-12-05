@@ -10,6 +10,7 @@ export class ModulePanelComponent implements OnInit {
   @Input() icon: string;
   @Input() name: string;
   @Input() details: string;
+  @Input() locked: boolean;
   @Output() event: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
