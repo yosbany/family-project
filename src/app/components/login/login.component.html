@@ -3,13 +3,15 @@
     <div class="col-md-4">
       <img src="assets/images/logo.png" width="150px" class="user-avatar" />
       <h1>{{'Home Administration' | translate }}</h1>
-      <form role="form">
+      <form role="form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-content">
           <div class="form-group">
             <input 
               type="email" 
               name="email"
               required
+              [(ngModel)]="user.email" 
+              #email="ngModel"
               class="form-control input-underline input-lg" 
               placeholder="{{'Email' | translate }}">
               <span *ngIf="!email.valid && email.touched">
@@ -20,7 +22,8 @@
             <input 
               type="password" 
               name="password"
-              required
+              required [(ngModel)]="user.password" 
+              #password="ngModel"
               class="form-control input-underline input-lg" 
               placeholder="{{'Password' | translate }}">
               <span *ngIf="!password.valid && password.touched">
@@ -28,9 +31,9 @@
               </span>
           </div>
         </div>
-        <a class="btn rounded-btn" [routerLink]="['/']" (click)="authenticate()">{{'Login' | translate }}</a>
+        <input type="submit" class="btn rounded-btn" [routerLink]="['/']" (click)="authenticate()" value="{{'Login' | translate }}">
         &nbsp;
-        <a class="btn rounded-btn" [routerLink]="['/signup/']">{{'Signup' | translate }}</a>
+        <input type="button" class="btn rounded-btn" [routerLink]="['/signup/']" value="{{'Signup' | translate }}">
       </form>
     </div>
   </div>

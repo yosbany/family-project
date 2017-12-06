@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { NgModel } from '@angular/forms';
 import { ComponentTransition, InterpreterService, UsersService } from '../../util-import';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +11,18 @@ import { ComponentTransition, InterpreterService, UsersService } from '../../uti
   providers: [UsersService]
 })
 export class LoginComponent implements OnInit {
-  constructor(public router: Router, public users: UsersService) {}
+
+  private user: User;
+
+  constructor(public users: UsersService) {
+    this.user = new User('', '', '', '', '', '');
+  }
 
   ngOnInit() { }
 
   authenticate() {
     this.users.authenticate();
   }
+
+  onSubmit() { }
 }
