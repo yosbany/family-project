@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ComponentTransition, InterpreterService, UsersService } from '../../util-import';
 import { User } from '../../models/user';
 
@@ -24,5 +24,7 @@ export class LoginComponent implements OnInit {
     this.users.authenticate();
   }
 
-  onSubmit() { }
+  onSubmit() {
+    this.users.authenticate();
+  }
 }

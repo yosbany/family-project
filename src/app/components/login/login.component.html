@@ -3,35 +3,43 @@
     <div class="col-md-4">
       <img src="assets/images/logo.png" width="150px" class="user-avatar" />
       <h1>{{'Home Administration' | translate }}</h1>
-      <form role="form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()"[ngFormOptions]="{ updateOn: 'submit' }" novalidate>
         <div class="form-content">
           <div class="form-group">
             <input 
               type="email" 
               name="email"
               required
-              [(ngModel)]="user.email" 
+              [(ngModel)]="user.email"               
               #email="ngModel"
               class="form-control input-underline input-lg" 
               placeholder="{{'Email' | translate }}">
-              <span *ngIf="!email.valid && email.touched">
-                El mail es obligatorio
-              </span>
+              <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.required">
+                   Email is required.
+                </div>                
+              </div>
           </div>
           <div class="form-group">
             <input 
-              type="password" 
+              type="password"
               name="password"
-              required [(ngModel)]="user.password" 
+              required 
+              [(ngModel)]="user.password"              
               #password="ngModel"
               class="form-control input-underline input-lg" 
               placeholder="{{'Password' | translate }}">
-              <span *ngIf="!password.valid && password.touched">
-                El password es obligatorio
-              </span>
+              <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="alert alert-danger">
+                <div *ngIf="password.errors.required">
+                  Password is required.
+                </div>
+              </div>
           </div>
         </div>
-        <input type="submit" class="btn rounded-btn" [routerLink]="['/']" (click)="authenticate()" value="{{'Login' | translate }}">
+        <input 
+          type="submit" 
+          class="btn rounded-btn" 
+          value="{{'Login' | translate }}">
         &nbsp;
         <input type="button" class="btn rounded-btn" [routerLink]="['/signup/']" value="{{'Signup' | translate }}">
       </form>
