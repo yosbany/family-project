@@ -9,8 +9,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './services/auth.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,8 +34,8 @@ export function createTranslateLoader(http: HttpClient) {
     HttpModule,
     BrowserModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
-    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AngularFireAuthModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -56,7 +57,8 @@ export function createTranslateLoader(http: HttpClient) {
     AccessDeniedComponent
   ],
   providers: [
-    AuthenticatedGuard
+    AuthenticatedGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

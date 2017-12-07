@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { ComponentTransition, InterpreterService, UsersService } from '../../util-import';
+import { ComponentTransition, InterpreterService, UsersService, AuthService } from '../../util-import';
 import { User } from '../../models/user';
 
 
@@ -16,14 +15,16 @@ export class LoginComponent implements OnInit {
 
   private user: User;
 
-  constructor(public users: UsersService) {
+  constructor(public users: UsersService, public auth: AuthService) {
     this.user = new User('', '', '', '', '', '');
   }
 
   ngOnInit() { }
 
-  authenticate() {
-    this.users.signInWithEmailAndPassword();
-  }
+  authenticate() { }
 
-  onSubmit(loginForm) { }
+  onSubmit() {
+   // this.auth.emailLogin(this.user.email, this.user.password);
+    this.users.authenticate(this.user.email);
+   }
+}
