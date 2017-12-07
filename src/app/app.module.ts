@@ -8,9 +8,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from '../environments/environment';
-export const firebaseConfig = environment.firebaseConfig;
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,9 +33,9 @@ export function createTranslateLoader(http: HttpClient) {
     HttpModule,
     BrowserModule,
     FormsModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule.enablePersistence(),
-    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({

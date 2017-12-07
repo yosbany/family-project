@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 import { ComponentTransition, InterpreterService, UsersService } from '../../util-import';
 import { User } from '../../models/user';
+
 
 @Component({
   selector: 'app-login',
@@ -21,10 +23,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() { }
 
   authenticate() {
-    this.users.authenticate();
+    this.users.signInWithEmailAndPassword();
   }
 
-  onSubmit() {
-    this.users.authenticate();
-  }
-}
+  onSubmit(loginForm) { }
